@@ -15,10 +15,10 @@
             font-family: 'Orbitron', sans-serif;
         }
         .glow {
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
         }
         .hover-scale:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
             transition: transform 0.3s ease;
         }
         .animate-pulse-slow {
@@ -42,12 +42,18 @@
             background: url('https://source.unsplash.com/random/1920x1080/?circuit,ai') no-repeat center center;
             background-size: cover;
         }
+        .card {
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body class="text-gray-100">
     <!-- Navigation -->
     <nav class="sticky-nav bg-gradient-to-r from-blue-950 to-indigo-950 text-white py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="container mx-auto px-4 max-w-7xl flex justify-between items-center">
             <h1 class="text-2xl font-bold gradient-text">GPUaaS</h1>
             <div class="space-x-4">
                 <a href="#superpod" class="hover:text-blue-300">SuperPOD</a>
@@ -61,37 +67,41 @@
 
     <!-- Hero Section -->
     <section class="py-24 hero-bg bg-opacity-50">
-        <div class="container mx-auto px-4 text-center">
+        <div class="container mx-auto px-4 max-w-7xl text-center">
             <h2 class="text-5xl font-bold gradient-text mb-6">Revolutionize AI with GPUaaS</h2>
-            <p class="text-gray-200 max-w-3xl mx-auto mb-8 text-lg">Unlock exascale AI and HPC with NVIDIA HGX and SuperPOD platforms, powered by L40S, B200, H200, H100, and GB200 GPUs. Fully managed, enterprise-grade solutions.</p>
+            <p class="text-gray-200 max-w-3xl mx-auto mb-8 text-lg">Unlock exascale AI and HPC with NVIDIA HGX and SuperPOD platforms, powered by L40S, B200, H200, H100, GB200, and more. Fully managed, enterprise-grade solutions.</p>
             <a href="#pricing" class="bg-blue-600 text-white px-10 py-4 rounded-full hover:bg-blue-700 glow animate-pulse-slow">Get Started Now</a>
         </div>
     </section>
 
     <!-- SuperPOD Architecture Section -->
     <section id="superpod" class="py-16 bg-gray-900">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 max-w-7xl">
             <h2 class="text-4xl font-semibold text-center gradient-text mb-10">NVIDIA DGX SuperPOD Architecture</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">SuperPOD Infrastructure</h3>
-                    <p class="text-gray-300">NVIDIA DGX SuperPOD delivers exascale AI supercomputing for the most demanding workloads.</p>
-                    <ul class="list-disc pl-5 text-gray-300 mt-4">
-                        <li><strong>Cluster Scale</strong>: 32 to 8192 GPUs (H100, H200, GB200) with Quantum-2 InfiniBand (400Gb/s).</li>
-                        <li><strong>NVLink & NVSwitch</strong>: 900GB/s GPU-to-GPU bandwidth for seamless data transfer.</li>
-                        <li><strong>Storage</strong>: DDN/WEKA/VAST with NVMe SSDs, 200GB/s/400GB/s throughput.</li>
-                        <li><strong>Cooling</strong>: Liquid-cooled B200/B300/GB200 NVL72/upcoming GB300 NVL72 for 30% better efficiency.</li>
-                    </ul>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">SuperPOD Infrastructure</h3>
+                        <p class="text-gray-300 text-sm truncate">NVIDIA DGX SuperPOD delivers exascale AI supercomputing for demanding workloads.</p>
+                        <ul class="list-disc pl-5 text-gray-300 mt-4 text-sm">
+                            <li><strong>Cluster Scale</strong>: 32 to 256 GPUs (H100, H200, GB200) with Quantum-2 InfiniBand (400Gb/s).</li>
+                            <li><strong>NVLink & NVSwitch</strong>: 900GB/s GPU-to-GPU bandwidth for seamless data transfer.</li>
+                            <li><strong>Storage</strong>: DDN A3I with 100TB NVMe SSDs, 20GB/s throughput.</li>
+                            <li><strong>Cooling</strong>: Liquid-cooled H200/H100/GB200 for 30% better efficiency.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Performance & Scalability</h3>
-                    <p class="text-gray-300">Scale effortlessly with optimized AI and HPC performance.</p>
-                    <ul class="list-disc pl-5 text-gray-300 mt-4">
-                        <li><strong>Exascale Compute</strong>: Up to 2.5 PFLOPS FP8 per H200 node, 5 PFLOPS for GB200.</li>
-                        <li><strong>Multi-Node</strong>: Supports 1,000+ node clusters with zero-downtime scaling.</li>
-                        <li><strong>Fault Tolerance</strong>: Redundant nodes and automated failover.</li>
-                        <li><strong>Networking</strong>: 3.2Tb/s InfiniBand for ultra-low latency.</li>
-                    </ul>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Performance & Scalability</h3>
+                        <p class="text-gray-300 text-sm truncate">Scale effortlessly with optimized AI and HPC performance.</p>
+                        <ul class="list-disc pl-5 text-gray-300 mt-4 text-sm">
+                            <li><strong>Exascale Compute</strong>: Up to 2.5 PFLOPS FP8 per H200 node, 5 PFLOPS for GB200.</li>
+                            <li><strong>Multi-Node</strong>: Supports 1,000+ node clusters with zero-downtime scaling.</li>
+                            <li><strong>Fault Tolerance</strong>: Redundant nodes and automated failover.</li>
+                            <li><strong>Networking</strong>: 3.2Tb/s InfiniBand for ultra-low latency.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,28 +109,32 @@
 
     <!-- HGX Platform Section -->
     <section id="hgx" class="py-16 bg-gradient-to-b from-blue-950 to-gray-900">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 max-w-7xl">
             <h2 class="text-4xl font-semibold text-center gradient-text mb-10">NVIDIA HGX Platform</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">HGX Modular Design</h3>
-                    <p class="text-gray-300">HGX platforms provide flexible, high-performance GPU solutions for AI and HPC.</p>
-                    <ul class="list-disc pl-5 text-gray-300 mt-4">
-                        <li><strong>Configurations</strong>: HGX H100 (8x H100), H200 (8x H200), GB200 (4x GB200).</li>
-                        <li><strong>Interconnect</strong>: NVLink 4.0 with 1.8TB/s total bandwidth.</li>
-                        <li><strong>Form Factor</strong>: Compact 8U systems for high-density deployments.</li>
-                        <li><strong>Compatibility</strong>: Seamlessly integrates with SuperPOD clusters.</li>
-                    </ul>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">HGX Modular Design</h3>
+                        <p class="text-gray-300 text-sm truncate">HGX platforms provide flexible, high-performance GPU solutions for AI and HPC.</p>
+                        <ul class="list-disc pl-5 text-gray-300 mt-4 text-sm">
+                            <li><strong>Configurations</strong>: HGX H100 (8x H100), H200 (8x H200), B200 (8x B200), B300 (8x B300).</li>
+                            <li><strong>Interconnect</strong>: NVLink 4.0 with 1.8TB/s total bandwidth.</li>
+                            <li><strong>Form Factor</strong>: Compact 8U systems for high-density deployments.</li>
+                            <li><strong>Compatibility</strong>: Seamlessly integrates with SuperPOD clusters.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Use Cases & Benefits</h3>
-                    <p class="text-gray-300">HGX powers diverse workloads with unmatched efficiency.</p>
-                    <ul class="list-disc pl-5 text-gray-300 mt-4">
-                        <li><strong>AI Training</strong>: Up to 30x faster LLM training with H200/GB200.</li>
-                        <li><strong>Inference</strong>: Real-time generative AI with low latency.</li>
-                        <li><strong>HPC</strong>: Molecular dynamics, climate modeling, and more.</li>
-                        <li><strong>Flexibility</strong>: Modular upgrades for future-proofing.</li>
-                    </ul>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Use Cases & Benefits</h3>
+                        <p class="text-gray-300 text-sm truncate">HGX powers diverse workloads with unmatched efficiency.</p>
+                        <ul class="list-disc pl-5 text-gray-300 mt-4 text-sm">
+                            <li><strong>AI Training</strong>: Up to 30x faster LLM training with H200/GB200.</li>
+                            <li><strong>Inference</strong>: Real-time generative AI with low latency.</li>
+                            <li><strong>HPC</strong>: Molecular dynamics, climate modeling, and more.</li>
+                            <li><strong>Flexibility</strong>: Modular upgrades for future-proofing.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,20 +142,26 @@
 
     <!-- Services Section -->
     <section id="services" class="py-16 bg-gray-900">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 max-w-7xl">
             <h2 class="text-4xl font-semibold text-center gradient-text mb-10">Core GPUaaS Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">AI & Machine Learning</h3>
-                    <p class="text-gray-300">Train and deploy LLMs (e.g., Llama3, GPT-4) with HGX H200/GB200 for 3x faster inference.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">AI & Machine Learning</h3>
+                        <p class="text-gray-300 text-sm truncate">Train and deploy LLMs (e.g., Llama3, GPT-4) with HGX H200/GB200 for 3x faster inference.</p>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">High-Performance Computing</h3>
-                    <p class="text-gray-300">Run simulations, quantum computing, and analytics with B200 and L40S GPUs.</p>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">High-Performance Computing</h3>
+                        <p class="text-gray-300 text-sm truncate">Run simulations, quantum computing, and analytics with B200 and L40S GPUs.</p>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Visualization & Rendering</h3>
-                    <p class="text-gray-300">Real-time ray tracing and virtual production with L40S, up to 5x faster rendering.</p>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Visualization & Rendering</h3>
+                        <p class="text-gray-300 text-sm truncate">Real-time ray tracing and virtual production with L40S, up to 5x faster rendering.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -149,35 +169,41 @@
 
     <!-- Managed Services Section -->
     <section id="managed-services" class="py-16 bg-gradient-to-b from-gray-900 to-blue-950">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 max-w-7xl">
             <h2 class="text-4xl font-semibold text-center gradient-text mb-10">Managed Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Consultancy</h3>
-                    <ul class="list-disc pl-5 text-gray-300">
-                        <li>AI strategy and workload optimization</li>
-                        <li>HGX/SuperPOD architecture design</li>
-                        <li>Performance benchmarking and ROI analysis</li>
-                        <li>Custom integration with existing systems</li>
-                    </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Consultancy</h3>
+                        <ul class="list-disc pl-5 text-gray-300 mt-4 text-sm">
+                            <li>AI strategy and workload optimization</li>
+                            <li>HGX/SuperPOD architecture design</li>
+                            <li>Performance benchmarking and ROI analysis</li>
+                            <li>Custom integration with existing systems</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Deployment</h3>
-                    <ul class="list-disc pl-5 text-gray-300">
-                        <li>End-to-end HGX/SuperPOD setup</li>
-                        <li>Containerized environments (Docker, Kubernetes)</li>
-                        <li>NVIDIA AI Enterprise suite pre-installed</li>
-                        <li>Hybrid and multi-cloud deployments</li>
-                    </ul>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Deployment</h3>
+                        <ul class="list-disc pl-5 text-gray-300 mt-4 text-sm">
+                            <li>End-to-end HGX/SuperPOD setup</li>
+                            <li>Containerized environments (Docker, Kubernetes)</li>
+                            <li>NVIDIA AI Enterprise suite pre-installed</li>
+                            <li>Hybrid and multi-cloud deployments</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Management</h3>
-                    <ul class="list-disc pl-5 text-gray-300">
-                        <li>24/7 monitoring with 99.99% uptime SLA</li>
-                        <li>Automated scaling and orchestration</li>
-                        <li>Proactive security and patch management</li>
-                        <li>Dedicated 24/7 support team</li>
-                    </ul>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Management</h3>
+                        <ul class="list-disc pl-5 text-gray-300 mt-4 text-sm">
+                            <li>24/7 monitoring with 99.99% uptime SLA</li>
+                            <li>Automated scaling and orchestration</li>
+                            <li>Proactive security and patch management</li>
+                            <li>Dedicated 24/7 support team</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,35 +211,41 @@
 
     <!-- Advanced Services Section -->
     <section id="advanced-services" class="py-16 bg-gray-900">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 max-w-7xl">
             <h2 class="text-4xl font-semibold text-center gradient-text mb-10">Advanced Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">AI Model Optimization</h3>
-                    <ul class="list-disc pl-5 text-gray-300">
-                        <li>Fine-tuning LLMs for specific domains</li>
-                        <li>Quantization and pruning for 50% faster inference</li>
-                        <li>NVIDIA TensorRT and Triton Inference Server</li>
-                        <li>Custom model pipelines for production</li>
-                    </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">AI Model Optimization</h3>
+                        <ul class="list-disc pl-5 text-gray-300 mt-4 text-sm">
+                            <li>Fine-tuning LLMs for specific domains</li>
+                            <li>Quantization and pruning for 50% faster inference</li>
+                            <li>NVIDIA TensorRT and Triton Inference Server</li>
+                            <li>Custom model pipelines for production</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Confidential Computing</h3>
-                    <ul class="list-disc pl-5 text-gray-300">
-                        <li>HGX H100/H200/GB200 secure processing</li>
-                        <li>Multi-Instance GPU (MIG) for isolation</li>
-                        <li>End-to-end encryption (data, models)</li>
-                        <li>GDPR, HIPAA, SOC2 compliance</li>
-                    </ul>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Confidential Computing</h3>
+                        <ul class="list-disc pl-5 text-gray-300 mt-4 text-sm">
+                            <li>HGX H100/H200/GB200 secure processing</li>
+                            <li>Multi-Instance GPU (MIG) for isolation</li>
+                            <li>End-to-end encryption (data, models)</li>
+                            <li>GDPR, HIPAA, SOC2 compliance</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">MLOps & Automation</h3>
-                    <ul class="list-disc pl-5 text-gray-300">
-                        <li>Automated model training pipelines</li>
-                        <li>CI/CD for AI workloads</li>
-                        <li>Monitoring and drift detection</li>
-                        <li>Integration with MLflow, Kubeflow</li>
-                    </ul>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">MLOps & Automation</h3>
+                        <ul class="list-disc pl-5 text-gray-300 mt-4 text-sm">
+                            <li>Automated model training pipelines</li>
+                            <li>CI/CD for AI workloads</li>
+                            <li>Monitoring and drift detection</li>
+                            <li>Integration with MLflow, Kubeflow</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -221,28 +253,62 @@
 
     <!-- GPU Configurations Section -->
     <section id="configurations" class="py-16 bg-gradient-to-b from-blue-950 to-gray-900">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 max-w-7xl">
             <h2 class="text-4xl font-semibold text-center gradient-text mb-10">GPU Configurations</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">NVIDIA L40S</h3>
-                    <p class="text-gray-300">Ada Lovelace, 48GB GDDR6, 18,176 CUDA cores, ideal for visualization and inference.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">NVIDIA L40S</h3>
+                        <p class="text-gray-300 text-sm truncate">Ada Lovelace, 48GB GDDR6, 18,176 CUDA cores, ideal for visualization and inference.</p>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">NVIDIA B200</h3>
-                    <p class="text-gray-300">Blackwell, 192GB HBM3e, 16,896 CUDA cores, optimized for AI and HPC.</p>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">NVIDIA B200</h3>
+                        <p class="text-gray-300 text-sm truncate">Blackwell, 192GB HBM3e, 16,896 CUDA cores, optimized for AI and HPC.</p>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">NVIDIA H100</h3>
-                    <p class="text-gray-300">Hopper, 94GB HBM3, high-performance for AI training and inference.</p>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">NVIDIA H100</h3>
+                        <p class="text-gray-300 text-sm truncate">Hopper, 94GB HBM3, high-performance for AI training and inference.</p>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">NVIDIA H200</h3>
-                    <p class="text-gray-300">Hopper, 141GB HBM3e, 4.8TB/s, 2x faster LLM inference.</p>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">NVIDIA H200</h3>
+                        <p class="text-gray-300 text-sm truncate">Hopper, 141GB HBM3e, 4.8TB/s, 2x faster LLM inference.</p>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">NVIDIA GB200</h3>
-                    <p class="text-gray-300">Blackwell, 240GB HBM3e, 20 PFLOPS FP8, for exascale AI and HPC.</p>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">NVIDIA GB200</h3>
+                        <p class="text-gray-300 text-sm truncate">Blackwell, 240GB HBM3e, 20 PFLOPS FP8, for exascale AI and HPC.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">NVIDIA HGX B200</h3>
+                        <p class="text-gray-300 text-sm truncate">Blackwell, 8x B200 GPUs, 144 PFLOPS inference, NVLink 5.0, for AI/HPC scale-up.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">NVIDIA HGX B300</h3>
+                        <p class="text-gray-300 text-sm truncate">Blackwell Ultra, 8x B300 GPUs, 11x faster inference than H100, 2.3TB HBM3e, for generative AI.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">NVIDIA GB200 NVL72</h3>
+                        <p class="text-gray-300 text-sm truncate">36 Grace CPUs, 72 Blackwell GPUs, 30x faster LLM inference, 130TB/s NVLink, liquid-cooled.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">NVIDIA GB300 NVL72</h3>
+                        <p class="text-gray-300 text-sm truncate">36 Grace CPUs, 72 Blackwell Ultra GPUs, 50x faster reasoning inference, 40TB memory, liquid-cooled.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -250,11 +316,84 @@
 
     <!-- Pricing Section -->
     <section id="pricing" class="py-16 bg-gray-900">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 max-w-7xl">
             <h2 class="text-4xl font-semibold text-center gradient-text mb-10">Bundled Pricing Plans</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-8 rounded-lg glow hover-scale text-center">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Starter Plan</h3>
-                    <p class=" —
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Starter Plan</h3>
+                        <p class="text-gray-300 text-sm mb-4 truncate">For startups and small AI workloads</p>
+                        <ul class="list-disc mx-auto pl-5 text-gray-300 mb-6 text-left max-w-xs text-sm">
+                            <li>1x L40S GPU (48GB)</li>
+                            <li>16 vCPUs, 64GB RAM</li>
+                            <li>1TB NVMe SSD</li>
+                            <li>400Gb/s Network</li>
+                            <li>Basic consultancy (5 hours/month)</li>
+                        </ul>
+                        <p class="text-3xl font-bold gradient-text mb-6">$2.50/hour</p>
+                        <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 glow">Get Started</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card border-2 border-blue-500">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Pro Plan</h3>
+                        <p class="text-gray-300 text-sm mb-4 truncate">For AI training and HPC workloads</p>
+                        <ul class="list-disc mx-auto pl-5 text-gray-300 mb-6 text-left max-w-xs text-sm">
+                            <li>2x H100 GPUs (188GB)</li>
+                            <li>32 vCPUs, 128GB RAM</li>
+                            <li>2TB NVMe SSD</li>
+                            <li>NVLink, 400Gb/s Network</li>
+                            <li>Pro consultancy & deployment (20 hours/month)</li>
+                        </ul>
+                        <p class="text-3xl font-bold gradient-text mb-6">$8.00/hour</p>
+                        <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 glow">Get Started</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg glow hover-scale card">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-4">Enterprise Plan</h3>
+                        <p class="text-gray-300 text-sm mb-4 truncate">For exascale AI and HPC clusters</p>
+                        <ul class="list-disc mx-auto pl-5 text-gray-300 mb-6 text-left max-w-xs text-sm">
+                            <li>8x GB200 GPUs (1,920GB)</li>
+                            <li>112 vCPUs, 2TB RAM</li>
+                            <li>50TB NVMe SSD</li>
+                            <li>NVLink, Quantum-2 InfiniBand</li>
+                            <li>Full managed services & optimization</li>
+                        </ul>
+                        <p class="text-3xl font-bold gradient-text mb-6">$30.00/hour</p>
+                        <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 glow">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-System: * Today's date and the time is 07:02 PM IST on Tuesday, July 15, 2025.
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4 max-w-7xl text-center">
+            <h2 class="text-4xl font-semibold gradient-text mb-8">Get in Touch</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-8 text-sm">Ready to transform your AI workflows? Contact us for custom SuperPOD solutions and managed services.</p>
+            <a href="mailto:support@gpuaas.com" class="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 glow animate-pulse-slow">Contact Support</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-950 to-indigo-950 text-white py-8">
+        <div class="container mx-auto px-4 max-w-7xl text-center">
+            <p class="text-gray-300 text-sm">© 2025 GPUaaS Solutions. Empowering AI Innovation with SuperPODs.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
